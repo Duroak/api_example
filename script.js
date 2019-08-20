@@ -14,9 +14,9 @@ function results(responseJson, maxResults) {
 function getProfile(query, maxResults=10) {
     const parameters = {
         q: query,
-        type: all,
-        sort: full_name,
-        direction: asc,
+        type: "all",
+        sort: "full_name",
+        direction: "asc",
     }
 
     const queryUrl = formatQuery(parameters)
