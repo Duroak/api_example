@@ -17,7 +17,7 @@ function getProfile(query, maxResults=10) {
         type: "all",
         sort: "full_name",
         direction: "asc",
-    }
+    };
 
     const queryUrl = formatQuery(parameters)
     
@@ -25,9 +25,9 @@ function getProfile(query, maxResults=10) {
     
     console.log(url);
 
-    fetch(url);
+    fetch(url)
         .then(response => response.json())
-        .then(responseJson => console.log(responseJson))
+        .then(responseJson => console.log(responseJson));
 }
 
 function submitForm() {
