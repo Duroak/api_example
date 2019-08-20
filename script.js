@@ -36,7 +36,6 @@ function getProfile(query, maxResults=10) {
       .catch(err => {
         $('#js-error-message').text(`Something went wrong: ${err.message}`);
       });
-  }
 }
 
 function submitForm() {
