@@ -26,8 +26,17 @@ function getProfile(query, maxResults=10) {
     console.log(url);
 
     fetch(url)
-        .then(response => response.json())
-        .then(responseJson => console.log(responseJson));
+    .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error(response.statusText);
+      })
+      .then(responseJson => console.log(responseJson, maxResults))
+      .catch(err => {
+        $('#js-error-message').text(`Something went wrong: ${err.message}`);
+      });
+  }
 }
 
 function submitForm() {
