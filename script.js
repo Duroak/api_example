@@ -34,7 +34,7 @@ function submitForm() {
     $('#js-form').submit(event => {
         event.preventDefault();
         const searchName = $('#js-search-profile').val();
-        const maxResults = ('#js-max-results').val();
+        const maxResults = $('#js-max-results').val();
         getProfile(searchName, maxResults);
     })
 }
