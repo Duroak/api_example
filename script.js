@@ -25,7 +25,7 @@ function getProfile(query, maxResults=10) {
     
     console.log(url);
 
-    fetch(url)
+    fetch(url);
         .then(response => response.json())
         .then(responseJson => console.log(responseJson))
 }
