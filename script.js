@@ -1,4 +1,4 @@
-let searchUrl='https://developer.github.com/users/:username/repos'
+let searchUrl='https://api.github.com/users/:username/repos'
 
 function formatQuery(parameters) { 
     const queryItems = Object.keys(parameters).map(key => `${key}=${parameters[key]}`)
@@ -19,7 +19,7 @@ function getProfile(query, maxResults=10) {
         direction: "asc",
     };
 
-    const queryUrl = formatQuery(parameters)
+    const queryUrl = formatQuery(parameters);
     
     const url = searchUrl + '?' + queryUrl;  
     
