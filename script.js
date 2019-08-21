@@ -1,4 +1,4 @@
-let searchUrl1='https://api.github.com/users//repos';
+let searchUrl1='https://api.github.com/users/';
 let searchUrl2='/repos';
 
 function formatQuery(parameters) { 
