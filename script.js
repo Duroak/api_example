@@ -1,4 +1,5 @@
-let searchUrl='https://api.github.com/users/:username/repos'
+let searchUrl1='https://api.github.com/users//repos';
+let searchUrl2='/repos';
 
 function formatQuery(parameters) { 
     const queryItems = Object.keys(parameters).map(key => `${key}=${parameters[key]}`)
@@ -11,9 +12,8 @@ function results(responseJson, maxResults) {
 
 }
 
-function getProfile(query, maxResults=10) {
+function getProfile(searchName, maxResults=10) {
     const parameters = {
-        q: query,
         type: "all",
         sort: "full_name",
         direction: "asc",
@@ -21,7 +21,7 @@ function getProfile(query, maxResults=10) {
 
     const queryUrl = formatQuery(parameters);
     
-    const url = searchUrl + '?' + queryUrl;  
+    const url = searchUrl1+ searchName + searchUrl2  + '?' + queryUrl;  
     
     console.log(url);
 
