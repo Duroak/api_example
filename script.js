@@ -9,12 +9,16 @@ function formatQuery(parameters) {
 function results(responseJson, maxResults) {
     console.log(responseJson);
     $('#result-list').empty();
-
+    for (let i=0; i < responseJson.owner.length & i<maxResults ; i++) {
+        $('#results-list').append(
+            `<li><h3><a href="${responseJson.owner[i].url}"><h3><li>`
+        )};
+    $('#results').removeclass('hidden');    
 }
 
 function getProfile(searchName, maxResults=10) {
     const parameters = {
-        type: "all",
+        type: "owner",
         sort: "full_name",
         direction: "asc",
     };
