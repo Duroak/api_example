@@ -36,7 +36,7 @@ function getProfile(searchName, maxResults=10) {
         }
         throw new Error(response.statusText);
       })
-      .then(responseJson => console.log(responseJson, maxResults))
+      .then(responseJson => results(responseJson, maxResults))
       .catch(err => {
         $('#js-error-message').text(`Something went wrong: ${err.message}`);
       });
